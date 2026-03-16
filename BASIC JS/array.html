@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="email" placeholder="Enter Email">
+    <input type="number" id="marks" placeholder="Enter Marks">
+    <button onclick="addStudent()">Add Student</button>
+
+    <h3>Student List:</h3>
+    <ul id="studentList"></ul>
+    
+    <script>
+        //global scope 
+        let students=[]; //Array
+        let emailSet=new Set(); // Set (unique emails)
+        let gradeMap= new Map(); //Map (email-> grade)
+        function addStudent(){
+            try{
+                debugger;
+                //local scope 
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const marks = Number(document.getElementById("marks").value);
+
+                const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(!emailPattern.tets(email)){
+                    throw new Error("Invalid Email ");
+                }
+
+            }
+            catch{
+
+            }
+        }
+    </script>
+</body>
+</html>
